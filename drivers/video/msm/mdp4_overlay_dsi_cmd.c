@@ -416,14 +416,11 @@ int mdp4_dsi_cmd_pipe_commit(int cndx, int wait, u32 *release_busy)
 	mdp4_stat.overlay_commit[pipe->mixer_num]++;
 
 	if (wait) {
-<<<<<<< HEAD
-=======
 		if (release_busy) {
 			msm_fb_release_busy(vctrl->mfd);
 			*release_busy = false;
 			mutex_unlock(&vctrl->mfd->dma->ov_mutex);
 		}
->>>>>>> c0eaeee... msm: display: command mode panel release fence
 		if (pipe->ov_blt_addr)
 			mdp4_dsi_cmd_wait4ov(0);
 		else
